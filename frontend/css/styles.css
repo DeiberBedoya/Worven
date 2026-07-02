@@ -1,0 +1,584 @@
+/* Botones */
+.heroBtn,
+.newInfo a,
+.exploreCardSmall a{
+    display: inline-block;
+    background: #5DD62C;
+    color: #000;
+    font-weight: 700;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.heroBtn:hover,
+.newInfo a:hover,
+.exploreCardSmall a:hover{
+    background: #46AB1C;
+    color: #fff;
+    transform: scale(1.08);
+    box-shadow: 0 8px 16px rgba(70, 171, 28, 0.3);
+}
+
+.heroBtn:active,
+.newInfo a:active,
+.exploreCardSmall a:active{
+    transform: scale(1.05);
+}
+
+/* Imágenes “full cover” */
+.heroVideo,
+.categoriesGrid img,
+.newGrid img,
+.exploreGrid img{
+    object-fit: cover; /*cubrir*/
+}
+
+/* HERO (fondo) */
+.hero{
+    position: relative;
+    height: 90vh;
+    overflow: hidden; /*cortar*/
+}
+
+.heroVideo{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-position: top;
+}
+
+/* Overlay */
+.hero::after{
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.30);
+}
+
+/* CONTENIDO DEL HERO */
+.heroContent{
+    position: relative;
+    z-index: 5;
+
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    width: 85%;
+    margin: 0 auto;
+
+    color: #fff;
+}
+
+.heroEyebrow{
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+}
+
+.heroTitle{
+    font-size: 80px;
+    line-height: 1;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.heroSubtitle{
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 26px;
+}
+
+/* Botón verde */
+.heroBtn{
+    margin: 20px auto 0;
+    padding: 10px 28px;
+    width: fit-content;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+}
+
+/* Botón formulario contacto */
+.formBtn{
+    display: inline-block;
+    background: #5DD62C;
+    color: #000;
+    font-weight: 700;
+    border-radius: 20px;
+    padding: 10px 26px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.formBtn:hover{
+    background: #46AB1C;
+    color: #fff;
+    transform: scale(1.08);
+    box-shadow: 0 8px 16px rgba(70, 171, 28, 0.3);
+}
+
+.formBtn:active{
+    transform: scale(1.05);
+}
+
+/* CATEGORIAS */
+#categories{
+    padding: 60px 0;
+    background: #fff;
+    color: #000;
+    text-align: center;
+}
+
+#categories h2{
+    font-size: 16px;
+    font-weight: 400;
+    color: #2f2f2f;
+}
+
+#categories p{
+    margin: 12px auto 0;
+    width: 90%;
+    max-width: 700px;
+
+    font-size: 22px;
+    font-weight: 600;
+    color: #1a1a1a;
+    line-height: 1.2;
+}
+
+.categoriesGrid{
+    width: 90%;
+    margin: 60px auto 0;
+
+    display: flex;
+    gap: 55px;
+    justify-content: center;
+}
+
+.categoriesGrid article{
+    width: 300px;
+}
+
+.categoriesGrid a{
+    position: relative;
+    display: block;
+}
+
+.categoriesGrid img{
+    width: 100%;
+    height: 45vh;
+}
+
+/* texto encima */
+.categoriesGrid h3{
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 22px;
+    text-transform: uppercase;
+}
+
+.categoriesGrid a:hover img{
+    filter: brightness(80%);
+}
+
+/* LO MÁS NUEVO */
+#new{
+    padding: 70px 0;
+}
+
+.sectionLayout{
+    display: flex;
+    gap: 60px;
+    align-items: flex-start;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.newInfo{
+    width: 30%;
+    margin: auto 0;
+}
+
+/* títulos y textos reusables */
+.sectionTitle{
+    font-size: 45px;
+    color: #1f7a10;
+    margin-bottom: 10px;
+    font-weight: 800;
+}
+
+.sectionText{
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 16px;
+}
+
+/* botón new */
+.newInfo a{
+    padding: 10px 26px;
+}
+
+/* Grid productos */
+.newGrid{
+    display: flex;
+    gap: 2px;
+}
+
+.newGrid article{
+    width: 220px;
+    text-align: left;
+}
+
+.newGrid img{
+    width: 100%;
+    height: 30vh;
+    margin-bottom: 10px;
+}
+
+.newGrid strong{
+    display: inline-block;
+    margin-top: 4px;
+}
+
+/* EXPLORE */
+.exploreInfo{
+    width: 360px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.exploreGrid {
+    display: flex;
+    gap: 15px; 
+    margin-left: 0; /* Quitamos el margen fijo */
+    width: 100%;    /* Que use todo el espacio que le deja .exploreInfo */
+    flex: 1;        /* Esto hace que el grid sea flexible */
+}
+
+.exploreCard {
+    position: relative;
+    flex: 3; /* La tarjeta grande ocupa 2 partes */
+    height: 53vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.exploreCardSmall{
+    position: relative;
+    width: 150px;
+    height: 53vh;
+    overflow: hidden; /* Esto corta cualquier cosa que intente salirse */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* overlays */
+.exploreCard::after,
+.exploreCardSmall::after{
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+}
+
+/* imágenes */
+.exploreGrid img{
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* texto encima */
+.exploreCard h3{
+    position: relative;
+    z-index: 10;
+    color: #fff;
+}
+
+/* flecha centrada */
+.exploreCardSmall a{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+
+    padding: 8px;
+    border-radius: 10px;
+}
+
+/* RESUME SECTION */
+#resume{
+    padding: 80px 0 40px;
+}
+
+#resume div{
+    width: 80%;
+    margin: 0 auto;
+}
+
+#resume h2{
+    font-size: 48px;
+    color: #1f7a10;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 10px;
+    width: 100%;
+    max-width: 600px;
+}
+
+@media (max-width: 1280px) {
+    .sectionLayout {
+        width: 95%; /* Un poco más de margen para evitar que toque el borde */
+        gap: 20px;
+        overflow: hidden; /* Seguro contra scroll accidental */
+    }
+
+    /* 2. Ajustamos la sección de info para que sea flexible */
+    .newInfo, .exploreInfo {
+        width: 35%; /* En lugar de un ancho fijo en px */
+        min-width: 250px;
+    }
+
+    /* 3. El Grid de productos ahora se encoge solo */
+    .newGrid {
+        flex: 1;
+        gap: 10px;
+        justify-content: flex-start;
+    }
+
+    .newGrid article {
+        width: 180px; /* Productos un poco más delgados para que quepan todos */
+    }
+
+    /* 4. EXPLORE: El cambio clave para evitar el desborde */
+    .exploreGrid {
+        margin-left: 0; /* Eliminamos márgenes que roban espacio */
+        flex: 1;
+        gap: 15px;
+    }
+
+    .exploreCard {
+        width: 60%; /* Proporción flexible */
+        height: 45vh; /* Bajamos un poco el alto para pantallas menos altas */
+        padding: 15px;
+    }
+
+    .exploreCardSmall {
+        width: 35%;
+        height: 45vh;
+    }
+
+    /* 5. Ajuste de títulos para que no ocupen tantas líneas */
+    .sectionTitle {
+        font-size: 38px;
+    }
+        #resume h2 {
+            width: 60%;
+            font-size: 38px;
+        }   
+}
+
+@media (max-width: 1024px) {
+    /* Ajuste de contenedores generales */
+    .heroContent, .sectionLayout, #resume div {
+        width: 90%;
+    }
+
+    .heroTitle {
+        font-size: 60px;
+    }
+
+    /* Categorías: Permitir que bajen si no caben */
+    .categoriesGrid {
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+
+    .categoriesGrid article {
+        width: 45%; /* Dos por fila */
+    }
+    .categoriesGrid img{
+        height: 25vh;
+    }
+
+    /* Secciones de Información: Cambiar a columna */
+    .sectionLayout {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .newInfo, .exploreInfo {
+        width: 100%;
+    }
+
+    .newGrid {
+        display: flex;
+        flex-wrap: wrap; 
+        justify-content: center; /* Centra el grupo si sobran espacios */
+        gap: 20px;               /* Aumentamos un poco el espacio para que respiren */
+        width: 100%;
+    }
+
+    .newGrid article {
+        /* calc(50% - mitad del gap) para forzar 2 columnas exactas */
+        width: calc(50% - 10px); 
+        text-align: center;
+        margin-bottom: 20px;    /* Espacio inferior para que no se peguen las filas */
+    }
+
+    .newGrid img {
+        width: 100%;
+        height: 25vh;           /* Ajustamos el alto para que se vea balanceado */
+        object-fit: cover;
+    }
+
+    .exploreGrid {
+        margin-left: 0;
+        display: flex;
+        flex-wrap: wrap; 
+        justify-content: center;
+        gap: 20px;
+        width: 100%; /* Aseguramos que use todo el ancho del sectionLayout */
+    }
+
+    .exploreCard {
+        width: calc(40% - 40px); 
+        height: 350px;
+    }
+
+    .exploreCardSmall {
+        width: calc(25% - 20px);
+        height: 350px;
+    }
+    #resume h2 {
+        width: 100%;
+        font-size: 42px;
+        text-align: center;
+    }
+    .sectionText {
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .sectionLayout {
+        width: 85%; 
+        flex-direction: column; /* Aseguramos que la info vaya arriba y el grid abajo */
+        gap: 30px;
+    }
+
+    .newInfo {
+        width: 100%;
+        text-align: center; /* Opcional: centra el texto para mejor estética móvil */
+    }
+
+    /* 3. Ajustamos el Grid de imágenes para que se vea en dos columnas grandes */
+    .newGrid {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap; /* Permite que las imágenes bajen a la siguiente fila */
+        justify-content: space-between;
+        gap: 15px;
+    }
+
+    .newGrid article {
+        /* Calculamos el 50% menos el espacio del gap para que queden 2 columnas perfectas */
+        width: calc(50% - 8px); 
+        text-align: center;
+    }
+
+    /* 4. Forzamos a que la imagen use todo el ancho de su nueva columna */
+    .newGrid img {
+        width: 100%;
+        height: auto; /* Mantiene la proporción de la imagen */
+        aspect-ratio: 3 / 4; /* Opcional: les da a todas el mismo formato vertical */
+        object-fit: cover;
+    }
+    #resume h2 {
+        width: 100%;
+        font-size: 42px;
+        text-align: center;
+    }
+    .sectionText {
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        height: 70vh;
+    }
+
+    .heroTitle {
+        font-size: 32px;
+    }
+
+    .sectionTitle {
+        font-size: 28px;
+    }
+
+    .categoriesGrid img{
+        height: 25vh;
+    }
+
+    .newGrid article {
+        width: 47%;
+    }
+
+    .newGrid img {
+        height: 20vh;
+    }
+
+    .formBtn {
+        width: 100%;
+        text-align: center;
+    }
+    .exploreGrid {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 20px !important;
+    }
+
+    /* Ajuste real de las tarjetas */
+    .exploreCard, 
+    .exploreCardSmall {
+        width: 100% !important;
+        height: 300px !important; /* Aumentamos a 300px para que no parezcan franjas */
+        min-height: 300px;
+        flex: none !important; /* Evita que flex-grow las aplaste */
+    }
+
+    /* Centrado del texto y botón */
+    .exploreCard h3,
+    .exploreCardSmall a {
+        z-index: 20;
+    }
+
+    #resume h2 {
+        width: 100%;
+        font-size: 42px;
+        text-align: center;
+    }
+    .sectionText {
+        text-align: center;
+    }
+}

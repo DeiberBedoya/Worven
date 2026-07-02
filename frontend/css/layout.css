@@ -1,0 +1,557 @@
+/* RESET BÁSICO */
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+
+    html {
+    scroll-behavior: smooth;
+    }
+
+    body{
+    font-family: "Open Sans", sans-serif;
+    }
+
+    a{ text-decoration: none; }
+    ul{ list-style: none; }
+    img, video{ display: block; max-width: 100%;}
+
+    /* Variables simples */
+    :root{
+    --green: #5DD62C;
+    --green-dark: #46AB1C;
+    --text: #151515;
+    --muted: #757272;
+    --bg-soft: #F3F3F3;
+    }
+
+    /*Header*/
+    .siteHeader{
+    position: sticky;
+    top: 0;
+    z-index: 10;
+
+    width: 100%;
+    height: 100px;
+    padding: 0 120px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: #fff; /* <-- con ; */
+    }
+
+    /* SOLO para la home (cuando body tenga .homePage) */
+    .homePage .siteHeader{
+    position: absolute;
+    top: 0;
+    left: 5%;
+    width: 90%;
+
+    padding: 0 50px;
+    height: 90px;
+    background: transparent;
+    }
+
+    .headerLogo img{
+    width: 150px;
+    height: auto;
+    }
+
+    .siteNav { order: 1; }
+    .headerActions { order: 2; }
+
+    .siteNav ul{
+    display: flex;
+    gap: 40px;
+    }
+
+    .homePage .siteNav a{
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color .2s ease;
+    }
+
+    .siteNav a{
+    color: #151515;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color .3s ease;
+    }
+
+    .siteNav a:hover{
+    color: var(--green);
+    }
+
+    .headerActions{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    }
+
+    .homePage .searchForm{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #fff;
+    border-radius: 20px;
+    padding: 6px 10px;
+    }
+
+    .searchForm{
+    display:flex;
+    align-items:center;
+    gap: 8px;
+    border: 1px solid #000;
+    background: #fff;
+    border-radius: 20px;
+    padding: 6px 10px;
+    }
+
+    .searchForm input{
+    border: none;
+    outline: none;
+    width: 140px;
+    }
+
+    .searchForm button{
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    color: #000;
+    transition: color .2s ease;
+    }
+
+    .searchForm button:hover{
+    color: var(--green);
+    }
+
+    .accountBtn, .cartBtn{
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-size: 18px;
+    color: var(--green);
+    transition: transform .2s ease, color .2s ease;
+    }
+
+    .accountBtn:hover, .cartBtn:hover{
+    color: var(--green-dark);
+    transform: scale(1.12);
+    }
+
+    /* Hamburguesa (solo aparece en responsive) */
+    .menuIcon{
+    display: none;
+    cursor: pointer;
+    color: #fff;
+    font-size: 22px;
+    height: 100%;
+    align-items: center;
+    }
+    .menuToggle{
+    display: none;
+    }
+
+    /*Footer*/
+.footerTop{
+    padding: 40px 0;
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    text-align: center;
+}
+
+.footerTop div{ width: 17.5%; }
+
+.footerTop i{
+    font-size: 28px;
+    color: #5DD62C;
+    margin-bottom: 20px;
+}
+
+.footerTop h3{
+    font-size: 16px;
+    margin-bottom: 6px;
+}
+
+.footerTop p{ font-size: 13px; }
+
+.footerMiddle{
+    width: 100%;
+    margin: 0 auto;
+    padding: 50px 170px;
+    background-color: #F3F3F3;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.footerBrand{ width: 30%; }
+
+.footerBrand img{
+    width: 90px;
+    height: auto;
+    margin-bottom: 12px;
+}
+
+.footerBrand p{
+    margin-bottom: 6px;
+    font-size: 16px;
+}
+
+.social{
+    margin-top: 14px;
+    display: flex;
+    gap: 12px;
+}
+
+.social a{
+    color: #5DD62C;
+    font-size: 22px;
+}
+
+.footerNewsletter{
+    width: 50%;
+    margin: auto 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.footerNewsletter p{
+    font-size: 14px;
+    line-height: 1.5;
+    max-width: 450px;
+}
+
+.footerNewsletter a{
+    display: inline-block;
+    background: #5DD62C;
+    color: #000;
+    font-weight: 700;
+    border-radius: 20px;
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    width: 60%;
+}
+
+.footerNewsletter a:hover{
+    background: #46AB1C;
+    color: #fff;
+    transform: scale(1.08);
+    box-shadow: 0 8px 16px rgba(70, 171, 28, 0.3);
+}
+
+.footerNewsletter a:active{
+    transform: scale(1.05);
+}
+
+.footerLinks{
+    width: 80%;
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+
+    padding: 45px 0 35px;
+}
+
+.footerLinks h4{
+    color: #337418;
+    font-size: 16px;
+    margin-bottom: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.footerLinks li{ margin-bottom: 10px; }
+
+.footerLinks a{
+    color: #000;
+    font-size: 14px;
+}
+
+.footerLinks a:hover{ text-decoration: underline; }
+
+.footerBottom{
+    width: 80%;
+    margin: 0 auto;
+
+    border-top: 1px solid #ddd;
+    padding-top: 18px;
+    padding-bottom: 20px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    font-size: 13px;
+}
+
+.footerBottom img{
+    width: 170px;
+    height: auto;
+}
+
+    /*Responsive Header + Footer*/
+    @media (max-width: 1024px){
+    .homePage .siteHeader, .siteHeader{
+        left: 0;
+        width: 100%;
+        padding: 0 50px;
+    }
+
+    .homePage .headerLogo img, .headerLogo img{
+        width: 120px;
+    }
+
+    .homePage .siteNav a, .siteNav a{
+        font-size: 13px;
+    }
+
+    .homePage .siteNav ul, .siteNav ul{
+        gap: 30px;
+    }
+
+    .homePage .searchForm, .searchForm{
+        gap: 10px;
+    }
+
+    .footerMiddle{
+        padding: 40px 100px;
+        gap: 70px;
+    }
+
+    .footerNewsletter a{
+        font-size: 15px;
+        padding: 6px 10px;
+    }
+    .footerNewsletter p{
+        width: 95%;
+    }
+    .footerBrand{
+        width: 30%;
+    }
+    .footerNewsletter{
+        width: 70%;
+    }
+}
+
+    @media (max-width: 900px){
+    .homePage .searchForm, .searchForm{
+        display: none;
+    }
+    
+    .menuIcon{
+        display: flex;
+        align-items: center;
+        height: 100%;
+        font-size: 22px;
+    }
+
+    .menuIcon i{
+        line-height: 1;
+        color: black;
+    }
+    .homePage .menuIcon i{
+        line-height: 1;
+        color: white
+    }
+
+    .siteHeader{
+        padding: 0 20px;
+        height: 80px;
+    }
+    .homePage .siteHeader{
+    left: 0;
+    width: 100%;
+    }
+    .headerLogo{
+        width: 100%;
+    }
+
+    .siteNav{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #ffffff60;
+        backdrop-filter: blur(20px);
+        border-top: 1px solid #eee;
+        display: none;
+        padding: 18px 20px;
+    }
+
+    .siteNav ul{
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .siteNav a{
+        color: var(--text);
+    }
+    
+    .menuToggle:checked ~ .siteNav{
+        display: block;
+    }
+
+    .footerTop{
+        flex-direction: column;
+        gap: 30px;
+        padding: 30px 20px;
+    }
+
+    .footerTop div{
+        width: 100%;
+    }
+
+    .footerMiddle{
+        flex-direction: column;
+        padding: 30px 20px;
+        gap: 30px;
+    }
+
+    .footerBrand{
+        width: 100%;
+    }
+
+    .footerBrand img{
+        display: block;
+        margin: 0 auto 12px;
+    }
+
+    .social{
+        justify-content: center;
+        width: 100%;
+    }
+
+    .footerNewsletter{
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .footerNewsletter a{
+        max-width: 280px;
+        width: auto;
+    }
+
+    .footerLinks{
+        width: 100%;
+        flex-direction: column;
+        padding: 30px 20px;
+        gap: 25px;
+    }
+
+    .footerBottom{
+        width: 100%;
+        flex-direction: column;
+        gap: 10px;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .footerBottom img{
+        width: 120px;
+    }
+
+    .footer{
+        text-align: center;
+    }
+
+    .footerTop,
+    .footerMiddle,
+    .footerLinks,
+    .footerBottom{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .footerTop > div,
+    .footerMiddle > .footerBrand,
+    .footerNewsletter,
+    .footerLinks nav{
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .footerNewsletter a{
+        margin: 12px auto 0;
+    }
+}
+
+    @media (max-width: 520px){
+    .searchForm{
+        display: none;
+    }
+
+    .siteHeader{
+        padding: 0 20px;
+        height: 80px;
+    }
+
+    .footerTop{
+        flex-direction: column;
+        gap: 30px;
+        padding: 30px 20px;
+    }
+
+    .footerTop div{
+        width: 100%;
+    }
+
+    .footerMiddle{
+        flex-direction: column;
+        padding: 30px 20px;
+        gap: 30px;
+    }
+
+    .footerBrand{
+        width: 100%;
+    }
+
+    .social{
+        justify-content: center;
+        width: 100%;
+    }
+
+    .footerNewsletter{
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .footerNewsletter a{
+        max-width: 280px;
+        width: auto;
+    }
+
+    .footerLinks{
+        width: 100%;
+        flex-direction: column;
+        padding: 30px 20px;
+        gap: 25px;
+    }
+
+    .footerBottom{
+        width: 100%;
+        flex-direction: column;
+        gap: 10px;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .footerBottom img{
+        width: 120px;
+    }
+}

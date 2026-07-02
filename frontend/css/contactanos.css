@@ -1,0 +1,592 @@
+body{
+    font-family: "Open Sans", sans-serif;
+}
+
+a{ text-decoration: none;}
+ul{ list-style: none;}
+img{ display: block;}
+
+/* Oculta elementos visualmente pero mantiene accesibilidad para lectores de pantalla */
+.srOnly {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+.siteNav { order: 1; }
+.headerActions { order: 2; }
+
+/* banner “full cover” */
+.heroImagen{
+    object-fit: cover; /*Llena todo el contenedor sin deformarse recortando lo que sobre*/
+}
+
+/*hero*/
+.hero{
+    position: relative; /*permite posicionar la imagen respecto a el (padre de "position:absolute"*/
+    height: 90vh;
+    overflow: hidden; /*Recorta todo lo que salga*/
+}
+
+.heroImagen{
+    position: absolute; /*Perimite posicionarse con top y left*/
+    top: 100;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-position: top;
+}
+
+/* Overlay */
+.hero::after{
+    content: "";
+    position: absolute;
+    top: 0; left: 0;  /*Crea un capa oscura encima del banner*/
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.628);
+}
+
+/* CONTENIDO DEL HERO */
+.content{
+    position: absolute;
+    left: 6%;
+    z-index: 5;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 85%;
+    margin: 0 auto;
+    color: #fff;
+}
+
+.pretitle{
+    font-size: 14px;
+    line-height: 1;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.title{
+    font-size: 80px;
+    line-height: 1;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.subtitle{
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 26px;
+}
+
+
+/* Botón verde */
+.btn{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 180px;
+    margin-bottom: -150px;
+    padding: 10px 28px; /*Ancho del boton*/
+    width: fit-content;
+}
+
+/*botones*/
+.btn,
+.formBtn{
+    display: inline-block;
+    background: #5DD62C;
+    color: #000;
+    font-weight: 700;
+    border-radius: 20px;
+}
+
+.btn:hover,
+.formBtn:hover{
+    background: #46AB1C;
+    color: #fff;
+    transform: scale(1.08);
+    box-shadow: 0 8px 16px rgba(70, 171, 28, 0.3);
+}
+
+.btn:active,
+.formBtn:active{
+    transform: scale(1.05);
+}
+
+/*Contenedores padre de funciones izquierda y derecha*/
+.contactSection{
+    padding: 100px 0;
+}
+
+.container{ /*Para imitar el ancho y centrar*/  
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+/*contenido de la izquierda*/
+.contactInfo{
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    padding-top: 35px;
+}
+
+.infoTitle{
+    font-size: 40px;
+    font-weight: 800;
+    color: #1f7a10;
+    margin-bottom: -60px;
+}
+
+.infoSub{
+    max-width: 500px;
+    line-height: 1.5; /*Espacio entre lineas*/
+    color: #2f2f2f;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.infoList li{
+    display: flex;
+    align-items: flex-start; /*Alinea Arriba*/
+    gap: 15px;
+    margin-bottom: 35px;
+}
+
+/*Iconos de informacion*/
+.infoList i{
+    font-size: 25px;
+    color: #5DD62C;
+    min-width: 25px; /*Para que los iconos ocupen el los mismo de ancho*/
+}
+
+.muted{
+    font-size: 14px;
+    color: #666;
+}
+
+/*siguenos*/
+.follow{ /*Los organiza en columnas*/
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 20px;
+}
+
+.socials{ /*Los coloca en fila*/
+    display: flex;
+    gap: 6px;
+}
+
+.socials a{
+    color: #5DD62C;
+}
+
+/*Contenido de la derecha*/
+.formCard{ 
+    background: #d5d3d374;
+    padding: 20px 40px; 
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(74, 255, 8, 0.08); /* Efecto flotante*/
+    max-width: 600px; /*Ancho del formulario*/
+}
+
+.formTitle{
+    display: flex;
+    align-items: center; /*Trabaja con "display: flex" para alinear el texto*/
+    font-size: 32px; /*tamaño de fuente*/
+    font-weight: 800; /*negrilla*/
+    color: #1f7a10;
+    margin-bottom: 30px;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form input,
+.form textarea{
+    border: none;
+    border-bottom: 1px solid #ccc; /*Para solo dejar una linea en la parte inferior*/
+    background: transparent;
+    padding: 10px 0;
+    font-size: 16px;
+    outline: none; /*Para quitar fondo que pone el navegador al hacer clic*/
+}
+
+input:focus,
+textarea:focus {
+    border-bottom: 2px solid #5DD62C; /*para que cuando haga clic donde llenara el formulario, la linea cambie a color verde*/
+}
+
+.note{
+    font-size: 14px;
+    color: #666;
+    line-height: 1.4;
+}
+
+/*boton enviar*/
+.formBtn{
+    font-weight: 800;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 20px;
+    width: fit-content; /*Para que el boton sea igual de anchon como el texto que tiene*/
+    cursor: pointer;
+    display: flex;
+    align-self: center; /*centra el boton*/
+}
+
+/*Mapa*/
+
+.mapWapper{
+    width: 100%;
+    margin-bottom: 100px;
+}
+
+.mapFrame{
+    width: 100%;
+    height: 600px;
+    border: none;
+    border-radius: 20px;
+}
+
+/* ===== MEDIA QUERIES - RESPONSIVE ===== */
+
+@media (max-width: 1200px) {
+    .title {
+        font-size: 60px;
+    }
+
+    .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    /* Añade estas dos líneas: */
+    padding: 0 30px; /* Esto evita que el contenido toque los bordes */
+    width: 100%;     /* Asegura que ocupe el ancho disponible */
+}
+
+    .contactInfo {
+        width: 100%;
+    }
+
+    .formCard {
+        width: 100%;
+        max-width: 100%;
+    }
+    .contactForm{
+        width: 100%;
+    }
+}
+
+/* Tablets y dispositivos medianos (768px max) */
+@media (max-width: 1024px) {
+    .title {
+        font-size: 60px;
+    }
+
+
+    .contactInfo {
+        width: 100%;
+        padding: 50px;
+    }
+
+    .formCard {
+        width: 100%;
+        max-width: 100%;
+    }
+    .contactForm{
+        width: 100%;
+    }
+}
+
+/* Móviles (máximo 768px) */
+@media (max-width: 768px) {
+    /* Hero */
+    .hero {
+        height: 60vh;
+        display: flex;
+        align-items: center; 
+    }
+
+    .content {
+        left: 0;
+        width: 100%;
+        padding: 0 15px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end; /* Alinea el contenido hacia el fondo */
+        height: 90%;
+    }
+
+    .pretitle {
+        font-size: 12px;
+    }
+
+    .title {
+        font-size: 40px;
+        margin-bottom: 8px;
+    }
+
+    .subtitle {
+        font-size: 13px;
+        margin-bottom: 20px;
+    }
+
+    .btn {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        padding: 12px 24px;
+        font-size: 14px;
+    }
+
+    /* Sección de contacto */
+    .contactSection {
+        padding: 60px 15px;
+    }
+
+    .container{
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-around;
+        gap: 30px;
+        max-width: 100%;
+    }
+
+    .container {
+        max-width: 100%;
+        flex-direction: column;
+        gap: 40px;
+        padding: 0;
+    }
+
+    .contactInfo {
+        gap: 40px;
+        padding-top: 0;
+    }
+
+    .infoTitle {
+        font-size: 28px;
+        margin-bottom: -40px;
+    }
+
+    .infoSub {
+        max-width: 100%;
+        font-size: 14px;
+        margin-bottom: 0;
+    }
+
+    .infoList li {
+        gap: 12px;
+        margin-bottom: 25px;
+    }
+
+    .infoList i {
+        font-size: 20px;
+        min-width: 20px;
+    }
+
+    .muted {
+        font-size: 13px;
+    }
+
+    .follow {
+        gap: 8px;
+        font-size: 16px;
+    }
+
+    .socials {
+        gap: 8px;
+    }
+
+    .socials a {
+        font-size: 20px;
+    }
+
+    /* Formulario */
+    .contactForm{
+        width: 100%;
+    }
+    
+    .formCard {
+        background: #d5d3d374;
+        padding: 20px;
+        border-radius: 15px;
+        max-width: 100%;
+    }
+
+    .formTitle {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .form {
+        gap: 16px;
+    }
+
+    .form input,
+    .form textarea {
+        padding: 12px 0;
+        font-size: 15px;
+    }
+
+    .note {
+        font-size: 12px;
+    }
+
+    .formBtn {
+        padding: 11px 26px;
+        font-size: 15px;
+        margin-top: 10px;
+    }
+
+    /* Mapa */
+    .mapFrame {
+        height: 400px;
+    }
+
+    .mapWapper {
+        margin-bottom: 60px;
+        padding: 0 15px;
+    }
+}
+
+/* Móviles pequeños (máximo 480px) */
+@media (max-width: 480px) {
+    main {
+        width: 100%;
+        padding: 0;
+    }
+
+    .hero {
+        width: 100%;
+        left: 0;
+    }
+
+    .heroImagen {
+        width: 100%;
+        left: 0;
+        object-fit: cover;
+    }
+    
+    .container {
+        padding: 0 20px;
+    }
+
+    /* Hero */
+    .hero {
+        height: 50vh;
+    }
+
+    .content {
+        padding: 0 10px;
+    }
+
+    .pretitle {
+        font-size: 11px;
+    }
+
+    .title {
+        font-size: 32px;
+        margin-bottom: 5px;
+    }
+
+    .subtitle {
+        font-size: 12px;
+    }
+
+    .btn {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        padding: 8px 20px;
+        font-size: 13px;
+    }
+
+    /* Sección de contacto */
+    .contactSection {
+        padding: 40px 10px;
+    }
+
+    .contactInfo {
+        gap: 30px;
+    }
+
+    .infoTitle {
+        font-size: 24px;
+        margin-bottom: -30px;
+    }
+
+    .infoSub {
+        font-size: 13px;
+    }
+
+    .infoList li {
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+
+    .infoList i {
+        font-size: 18px;
+    }
+
+
+    .formCard {
+        padding: 15px;
+        border-radius: 12px;
+    }
+
+    .formTitle {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+
+    .form {
+        gap: 14px;
+    }
+
+    .form input,
+    .form textarea {
+        padding: 10px 0;
+        font-size: 14px;
+    }
+
+    .formBtn {
+        padding: 10px 22px;
+        font-size: 13px;
+    }
+
+    /* Mapa */
+    .mapFrame {
+        height: 300px;
+    }
+}
+
+@media (max-width: 380px) {
+    .btn {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        padding: 8px 20px;
+        font-size: 13px;
+    }
+}
+
+

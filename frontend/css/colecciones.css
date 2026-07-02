@@ -1,0 +1,372 @@
+/*main*/
+main{
+    width: 85%;
+    margin: 0 auto;
+    display: grid;
+    gap: 40px;
+}
+
+.heroColecciones,
+.introColecciones,
+.infoColecciones,
+.nuevaColeccion,
+hr{
+    grid-column: 1 / -1; /*ocupa todas las columnas del grid, permitiendo que funcione como una seccion completa*/
+}
+
+/*hero*/
+.heroColecciones{
+    margin-bottom: 50px;
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+    position: relative;
+}
+
+.imgBannerColecciones{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 0 50%;
+}
+
+/*intro*/
+.introColecciones{
+    text-align: center;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    margin-bottom:50px;
+}
+
+.rutas{
+    font-size:14px;
+    color:#757272;
+    margin-bottom:5px;
+}
+
+.rutas a{
+    color:#757272;
+    font-size:14px;
+    font-weight:500;
+}
+
+.tituloColecciones{
+    font-size:40px;
+    font-weight:800;
+    text-transform:uppercase;
+    color:#2E7D32;
+    margin-bottom:15px;
+}
+
+.descripcionColecciones{
+    font-size:15px;
+    color:#000;
+    letter-spacing:-0.2px;
+    line-height: 1.5;
+    max-width: 500px;
+    margin-bottom: 50px;
+}
+
+/*secciones*/
+.seccionTitulo{
+    font-size:45px;
+    color:#1f7a10;
+    margin-bottom:10px;
+    font-weight:800;
+    line-height:1.1;
+}
+
+.seccionParrafo{
+    font-size:16px;
+    color:#333;
+    margin-bottom:16px;
+}
+
+.newGridColeccion, .newGridColeccionNueva{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /*diseño de cuadrícula con dos columnas, una fraccion con un ancho fijo*/
+    gap: 20px;
+}
+
+/* Botón flecha */
+.boton{
+    position:absolute;
+    top:50%;
+    right:10px;
+    transform: translateY(-50%);
+    z-index:5;
+
+    padding:10px;
+    border-radius:10px;
+    border:none;
+    background:#5DD62C;
+
+    cursor:pointer;
+    transition: background .3s ease, box-shadow .3s ease, color .3s ease;
+}
+
+.boton:hover{
+    background:#46AB1C;
+    color:#fff;
+    box-shadow: 0 8px 16px rgba(70, 171, 28, 0.3);
+}
+
+/*nueva coleccion*/
+.nuevaInfo{
+    width: 360px;
+    margin: auto 0;
+}
+
+.nuevaColeccion{
+    display:flex;
+    justify-content:space-between;
+    gap:40px;
+}
+
+.nuevaCard{
+    position:relative;
+    width:350px;
+    display:flex;
+    flex-direction:column;
+    width: 100%;
+}
+
+.nuevaCard img{
+    width:100%;
+    height:420px;
+    object-fit:cover;
+}
+
+.nuevaCard h3{
+    margin-top:10px;
+    font-size:14px;
+}
+
+/*resumen*/
+#resumen{ padding:5px 0 40px; }
+
+hr{ margin:40px 0; }
+
+#resumen div{ margin-bottom:50px; }
+
+#resumen h3{
+    font-size:48px;
+    color:#1f7a10;
+    font-weight:800;
+    line-height:1.1;
+    margin-bottom:10px;
+}
+
+/* RESPONSIVE */
+
+/* Tablets - 1024px y menores */
+@media (max-width: 1024px) {
+
+    .newGridColeccion,
+    .newGridColeccionNueva{
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+    }
+
+    main {
+        width: 90%;
+        gap: 30px;
+    }
+
+    .heroColecciones {
+        height: 200px;
+        margin-bottom: 30px;
+    }
+
+    .introColecciones {
+        width: 80%;
+        margin: auto;
+    }
+
+    .tituloColecciones {
+        font-size: 38px;
+    }
+
+    .descripcionColecciones {
+        font-size: 14px;
+    }
+
+    .seccionTitulo {
+        padding-top: 25px;
+        font-size: 34px;
+    }
+
+    .seccionParrafo {
+        font-size: 14px;
+    }
+
+    .boton {
+        top: 30%;
+        right: 10px;
+        transform: none;
+        padding: 8px;
+        font-size: 16px;
+    }
+
+    #resumen h3 {
+        font-size: 28px;
+    }
+
+    #resumen div {
+        width: 95%;
+    }
+
+    hr {
+        margin: 30px 0;
+    }
+
+    .nuevaColeccion {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .nuevaInfo {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .nuevaCard {
+        width: 100%;
+    }
+
+    .nuevaCard img {
+        max-height: 300px;
+        height: 290px;
+    }
+
+    .nuevaCard h3 {
+        font-size: 16px;
+        padding-bottom: 10px;
+    }
+
+}
+
+/* Tablet pequeño/Grande móvil - 768px y menores */
+@media (max-width: 768px) {
+    .newGridColeccion,
+    .newGridColeccionNueva{
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+    }
+
+    main {
+        width: 95%;
+        padding: 0 20px;
+        gap: 30px;
+    }
+
+    .heroColecciones {
+        height: 200px;
+        margin-bottom: 30px;
+    }
+
+    .introColecciones {
+        margin-bottom: 30px;
+        width: 80%;
+    }
+
+    .tituloColecciones {
+        font-size: 28px;
+    }
+
+    .descripcionColecciones {
+        font-size: 14px;
+        max-width: 100%;
+    }
+
+    .seccionTitulo {
+        padding-top: 25px;
+        font-size: 28px;
+    }
+
+    .seccionParrafo {
+        font-size: 14px;
+    }
+
+    .boton {
+        top: 30%;
+        right: 10px;
+        transform: none;
+        padding: 8px;
+        font-size: 16px;
+    }
+
+    #resumen h3 {
+        font-size: 28px;
+    }
+
+    #resumen div {
+        width: 100%;
+    }
+
+    hr {
+        margin: 30px 0;
+    }
+
+    .nuevaColeccion {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .nuevaInfo {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .nuevaCard {
+        width: 100%;
+    }
+
+    .nuevaCard img {
+        max-height: 300px;
+        height: 190px;
+    }
+
+    .nuevaCard h3 {
+        font-size: 16px;
+        padding-bottom: 10px;
+    }
+}
+
+/* Móviles pequeños - 520px y menores */
+@media (max-width: 520px) {
+        .newGridColeccion,
+    .newGridColeccionNueva{
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .introColecciones {
+        padding: 0px 25px;
+    }
+    .tituloColecciones {
+        font-size: 24px;
+    }
+
+    .seccionTitulo {
+        font-size: 24px;
+    }
+
+    .descripcionColecciones {
+        font-size: 13px;
+    }
+
+    .nuevaCard img {
+        max-height: 240px;
+    }
+
+    .nuevaCard .boton {
+        top: 70px;
+    }
+
+    #resumen h3 {
+        font-size: 24px;
+    }
+}

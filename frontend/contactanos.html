@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://kit.fontawesome.com/8ded9e502a.js" crossorigin="anonymous"></script>
+	<title>Contáctanos</title>
+    <link rel="shortcut icon" href="img/Isotipo.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/contactanos.css">
+    <link rel="stylesheet" href="./css/layout.css">
+</head>
+<body class="homePage">
+    <header class="siteHeader">
+        <div class="headerLogo">
+            <a href="index.html">
+                <img src="img/Logotipo-verde.png" alt="Logo de Worven">
+            </a>
+        </div>
+        <div class="headerActions">
+            <form class="searchForm" role="search" action="buscar.html" method="get">
+                <input type="text" name="q" placeholder="Buscar productos Worven" aria-label="Buscar productos">
+                <button type="submit" aria-label="Buscar">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </form>
+            <a href="./construccion.html"><button class="accountBtn" aria-label="Mi cuenta"><i class="fa-solid fa-user"></i></button></a>
+            <a href="./construccion.html"><button class="cartBtn" aria-label="Carrito de compras"><i class="fa-solid fa-bag-shopping"></i></button></a>
+            <!-- Icono hamburguesa -->
+            <label for="menuToggle" class="menuIcon">
+                <i class="fa-solid fa-bars"></i>
+            </label>
+        </div>
+        <input type="checkbox" id="menuToggle" class="menuToggle">
+        <nav class="siteNav">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="camisetas.html">Camisetas</a></li>
+                <li><a href="colecciones.html">Colecciones</a></li>
+                <li><a href="sobreWorven.html">Sobre Worven</a></li>
+                <li><a href="contactanos.html">Contáctanos</a></li>
+            </ul>
+        </nav>
+    </header>
+	<!-- Sección de contacto debajo del banner -->
+    <main>
+        <section class="hero" aria-label="Banner principal">
+            <img class="heroImagen" src="img/camisetas-banner-contactanos-bg.jpg" alt="Colección Worven Spring Summer" >
+            <div class="content">
+                <div class="pretitle">SPRING / SUMMER 2026</div>
+                <h1 class="title">Contáctanos</h1>
+                <p class="subtitle">Estamos aquí para acompañarte en cada paso</p>
+                <a class="btn" href="#form">Escríbenos</a>
+            </div>
+	    </section>
+        
+        <section class="contactSection" aria-label="Sección de contacto">
+            <div class="container">
+                <div class="contactInfo">
+                    <h2 class="infoTitle">HABLEMOS</h2>
+                    <p class="infoSub">
+                        ¿Tienes preguntas, comentarios o necesitas ayuda con tu pedido?
+                        Nuestro equipo Worven está listo para ayudarte.
+                    </p>
+                    <ul class="infoList">
+                        <li>
+                            <i class="fa-solid fa-map-pin"></i>
+                            <div>
+                                <strong>Dirección</strong>
+                                <div class="muted">Calle 14 #52A-372, Medellín, Colombia</div>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-phone"></i>
+                            <div>
+                                <strong>Línea de atención</strong>
+                                <div class="muted">01 8000 189 002</div>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-envelope"></i>
+                            <div>
+                                <strong>Correo electrónico</strong>
+                                <div class="muted">contacto@worven.co</div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="follow">
+                        <strong>Síguenos:</strong>
+                        <div class="socials">
+                            <a href="https://www.whatsapp.com/" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                            <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <aside class="contactForm" id="form" aria-label="Formulario de contacto" >
+                    <div class="formCard">
+                        <h2 class="formTitle">ENVÍANOS TU MENSAJE</h2>
+                        <form class="form" action="#" method="post">
+                            <label class="formulario" for="name">Nombre completo</label>
+                            <input id="name" name="name" type="text" placeholder="Nombre completo" required> 
+                            
+                            <label class="formulario" for="email">Correo</label>
+                            <input id="email" name="email" type="email" placeholder="Correo electrónico" required>
+
+                            <label class="formulario" for="message">Mensaje</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Cuéntanos en qué podemos ayudarte"></textarea>
+
+                            <p class="note">
+                                En Worven valoramos tu tiempo. Te responderemos lo antes posible.
+                            </p>
+
+                            <button class="formBtn" type="submit">Enviar mensaje</button>
+                        </form>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <section class="mapWapper" aria-label="Ubicación">
+            <div class="container" style="max-width:1200px;">
+                <iframe class="mapFrame" src="https://maps.google.com/maps?q=Itag%C3%BCi%20Antioquia&t=&z=13&ie=UTF8&iwloc=&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <section class="footerTop">
+            <div>
+                <i class="fa-solid fa-rotate-right"></i>
+                <h3>Cambios y devoluciones GRATIS</h3>
+                <p>Tienes hasta 30 días calendario para realizar cambios en cualquiera de nuestras tiendas físicas.</p>
+            </div>
+            <div>
+                <i class="fa-regular fa-truck"></i>
+                <h3>Envíos Express</h3>
+                <p>Entregas en Medellín en 24 horas y envíos nacionales entre 2 y 4 días hábiles.</p>
+            </div>
+            <div>
+                <i class="fa-solid fa-credit-card"></i>
+                <h3>Múltiples medios de pago</h3>
+                <p>Tarjetas débito, crédito, PSE y pagos contra entrega disponibles.</p>
+            </div>
+            <div>
+                <i class="fa-solid fa-file-invoice-dollar"></i>
+                <h3>Opciones de financiación</h3>
+                <p>Paga en cuotas con entidades aliadas o a través de Su+ Pay.</p>
+            </div>
+        </section>
+
+        <section class="footerMiddle">
+            <div class="footerBrand">
+                <img src="img/Isotipo.png" alt="Logo Worven">
+                <p><strong>Wear Your Identity</strong></p>
+                <p>Dirección: Calle 14 # 52 A 372, Medellín, Colombia</p>
+                <p>Tel: 01 8000 189 002</p>
+
+                <div class="social">
+                    <a href="https://www.whatsapp.com/" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                </div>
+            </div>
+
+            <div class="footerNewsletter">
+                <p>
+                    Suscríbete a nuestra newsletter y recibe acceso anticipado a lanzamientos,
+                    descuentos exclusivos y contenido especial de Worven.
+                </p>
+                <a href="contactanos.html">Quiero suscribirme</a>
+            </div>
+        </section>
+
+        <section class="footerLinks">
+            <nav>
+                <h4>Sobre Nosotros</h4>
+                <ul>
+                    <li><a href="./sobreWorven.html">Nuestra historia</a></li>
+                    <li><a href="colecciones.html">Próximos lanzamientos</a></li>
+                    <li><a href="camisetas.html">Ofertas</a></li>
+                </ul>
+            </nav>
+
+            <nav>
+                <h4>Información</h4>
+                <ul>
+                    <li><a href="politicas.html">Términos y condiciones</a></li>
+                    <li><a href="politicas.html#cookies">Política de Cookies</a></li>
+                    <li><a href="politicas.html#cambios">Cambios y devoluciones</a></li>
+                    <li><a href="politicas.html#datos">Protección de datos</a></li>
+                </ul>
+            </nav>
+
+            <nav>
+                <h4>Cambios y Devoluciones</h4>
+                <ul>
+                    <li><a href="politicas.html#cambios">Gestionar mi cambio</a></li>
+                    <li><a href="politicas.html#pqr">PQR y solicitudes</a></li>
+                    <li><a href="politicas.html#pqr">Consultar estado de PQR</a></li>
+                </ul>
+            </nav>
+
+            <nav>
+                <h4>Servicio al Cliente</h4>
+                <ul>
+                    <li><a href="https://www.whatsapp.com/" target="_blank">WhatsApp</a></li>
+                    <li><a href="contactanos.html">Centro de ayuda</a></li>
+                    <li><a href="tel:+573001234567">Línea nacional: 01 8000 189 002</a></li>
+                </ul>
+            </nav>
+        </section>
+
+        <section class="footerBottom">
+            <a href="index.html"><img src="img/logo-original-Worven.png" alt="logo Worven"></a> 
+            <p>Worven S.A.S | NIT: 901.456.782-3</p>
+            <p>© 2026 Worven. Todos los derechos reservados.</p>
+        </section>
+    </footer>
+</body>
+</html>

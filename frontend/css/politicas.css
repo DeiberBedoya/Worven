@@ -1,0 +1,70 @@
+/* Estilos para la página de Políticas - Worven */
+
+main {
+    max-width: 900px; /* Ancho contenido para facilitar la lectura */
+    margin: 120px auto 80px; /* Margen superior para el header sticky */
+    padding: 0 20px;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Títulos de sección */
+section h2 {
+    font-size: 28px;
+    color: #1f7a10; /* El verde de tu marca */
+    border-bottom: 2px solid #5DD62C;
+    display: inline-block;
+    margin-bottom: 30px;
+    padding-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Espaciado entre secciones */
+section {
+    margin-bottom: 60px;
+    scroll-margin-top: 100px; /* Para que el ancla no quede tapada por el header */
+}
+
+/* Bloques de artículos */
+article {
+    margin-bottom: 25px;
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 4px solid #5DD62C;
+    transition: transform 0.2s;
+}
+
+article:hover {
+    transform: translateX(5px);
+    background: #f0f0f0;
+}
+
+article h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #000;
+    font-weight: 700;
+}
+
+article p {
+    font-size: 15px;
+    color: #555;
+    margin: 0;
+}
+
+/* Ajuste para dispositivos móviles */
+@media (max-width: 768px) {
+    main {
+        margin-top: 100px;
+    }
+    
+    section h2 {
+        font-size: 22px;
+    }
+    
+    article h3 {
+        font-size: 16px;
+    }
+}

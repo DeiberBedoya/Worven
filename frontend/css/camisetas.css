@@ -1,0 +1,878 @@
+/* RESET BÁSICO */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Open Sans", sans-serif;
+}
+
+a{ text-decoration: none; }
+ul{ list-style: none; }
+img, video{ display: block; }
+
+/* ===================== HEADER ===================== */
+.siteHeader{
+    position: sticky;
+    top: 0;
+    z-index: 10;
+
+    width: 100%;
+    height: 100px;
+    padding: 0 120px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: #fff;
+}
+
+.headerLogo img{ width: 150px; height: auto; }
+
+.siteNav ul{ display:flex; gap:40px; }
+
+
+.siteNav { order: 1; }
+.headerActions { order: 2; }
+
+.siteNav a{
+    color: #151515;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color .3s ease;
+}
+.siteNav a:hover{ color:#5DD62C; }
+
+.headerActions{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+/* Search */
+.searchForm{
+    display:flex;
+    align-items:center;
+    gap:8px;
+
+    border: 1px solid #000;
+    background: #fff;
+    border-radius: 20px;
+    padding: 6px 10px;
+}
+
+.searchForm input{
+    border:none;
+    outline:none;
+    width:140px;
+}
+
+.searchForm button{
+    border:none;
+    background:transparent;
+    cursor:pointer;
+    color:#000;
+    transition: color .3s ease;
+}
+.searchForm button:hover{ color:#5DD62C; }
+
+/* Icon buttons */
+.accountBtn,
+.cartBtn{
+    border:none;
+    background:transparent;
+    cursor:pointer;
+
+    font-size:18px;
+    color:#5DD62C;
+
+    transition: transform .3s ease, color .3s ease;
+}
+
+.accountBtn:hover,
+.cartBtn:hover{
+    color:#46AB1C;
+    transform: scale(1.15);
+}
+
+/*LAYOUT MAIN*/
+main{
+    width: 85%;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 40px;
+}
+
+/* Elementos que ocupan todo el ancho del grid */
+.heroCamisetas,
+.introCamisetas,
+.paginacion,
+hr,
+.introRopa{
+    grid-column: 1 / -1;
+}
+
+/*
+HERO CAMISETAS */
+.heroCamisetas{
+    margin-bottom: 50px;
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+    position: relative;
+}
+
+.imgBannerCamisetas{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 0 4%;
+}
+
+/* INTRO */
+.introCamisetas{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.rutas{
+    font-size: 14px;
+    color: #757272;
+    margin-bottom: 5px;
+}
+
+.rutas a{
+    color: #757272;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.tituloCamisetas{
+    font-size: 40px;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #2E7D32;
+    margin-bottom: 10px;
+}
+
+.introCamisetas .tituloCamisetas{
+    margin-bottom: 15px;
+}
+
+.descripcionCamisetas{
+    font-size: 15px;
+    line-height: 1.4;
+    color: #1a1a1a;
+    letter-spacing: -0.2px;
+}
+
+.introCamisetas .descripcionCamisetas{
+    line-height: 1.7;
+    margin-bottom: 50px;
+    max-width: 500px;
+}
+
+.introRopa{
+    text-align: left;
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+/* FILTROS */
+.contenedorProductos{
+    display: block;
+    padding: 0;
+    grid-column: 1 / 2;
+}
+
+.filtros{
+    width: 100%;
+}
+
+.filtros p{
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.filtros ul{
+    padding: 0;
+}
+
+.filtros button{
+    width: 100%;
+    padding: 15px 0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: none;
+    border: none;
+    border-bottom: 1px solid #ccc;
+
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #000;
+}
+
+.filtros button:hover{
+    border-bottom-color: #5DD62C;
+    color: #5DD62C;
+}
+
+/* PRODUCTOS */
+.productos{
+    width: 100%;
+    grid-column: 2;
+}
+
+.barraOrden{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 20px;
+}
+
+.ver, .ordenar{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+}
+
+.iconoVer{
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 5px 8px;
+    cursor: pointer;
+}
+
+.ordenar select{
+    padding: 6px 10px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+.gridProductos{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.producto{
+    display: flex;
+    flex-direction: column;
+    background: transparent;
+}
+
+.producto img{
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    object-position: 10% 10%;
+}
+
+.producto h3{
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+.producto p{
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* PAGINACIÓN */
+.paginacion{
+    text-align: center;
+    padding: 40px 0;
+}
+
+.barra{
+    width: 200px;
+    height: 2px;
+    background: #eee;
+    margin: 10px auto;
+}
+
+.progreso{
+    width: 30%;
+    height: 100%;
+    background: #000;
+}
+
+.btnMostrar{
+    margin-top: 10px;
+    display: inline-block;
+
+    background: #5DD62C;
+    color: #000;
+    font-weight: 700;
+
+    border-radius: 20px;
+    border: none;
+
+    padding: 10px 22px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btnMostrar:hover{
+    background: #46AB1C;
+    color: #fff;
+    transform: scale(1.08);
+    box-shadow: 0 8px 16px rgba(70, 171, 28, 0.3);
+}
+
+.btnMostrar:active{
+    transform: scale(1.05);
+}   
+
+/* FOOTER */
+.footerTop{
+    padding: 40px 0;
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    text-align: center;
+}
+
+.footerTop div{ width: 17.5%; }
+
+.footerTop i{
+    font-size: 28px;
+    color: #5DD62C;
+    margin-bottom: 20px;
+}
+
+.footerTop h3{
+    font-size: 16px;
+    margin-bottom: 6px;
+}
+
+.footerTop p{ font-size: 13px; }
+
+.footerMiddle{
+    width: 100%;
+    margin: 0 auto;
+    padding: 50px 170px;
+    background-color: #F3F3F3;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.footerBrand{ width: 30%; }
+
+.footerBrand img{
+    width: 90px;
+    height: auto;
+    margin-bottom: 12px;
+}
+
+.footerBrand p{
+    margin-bottom: 6px;
+    font-size: 16px;
+}
+
+.social{
+    margin-top: 14px;
+    display: flex;
+    gap: 12px;
+}
+
+.social a{
+    color: #5DD62C;
+    font-size: 22px;
+}
+
+.footerNewsletter{
+    width: 50%;
+    margin: auto 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.footerNewsletter p{
+    font-size: 14px;
+    line-height: 1.5;
+    max-width: 450px;
+}
+
+.footerNewsletter a{
+    display: inline-block;
+    background: #5DD62C;
+    color: #000;
+    font-weight: 700;
+    border-radius: 20px;
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    width: 60%;
+}
+
+.footerNewsletter a:hover{
+    background: #46AB1C;
+    color: #fff;
+    transform: scale(1.08);
+    box-shadow: 0 8px 16px rgba(70, 171, 28, 0.3);
+}
+
+.footerNewsletter a:active{
+    transform: scale(1.05);
+}
+
+.footerLinks{
+    width: 80%;
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+
+    padding: 45px 0 35px;
+}
+
+.footerLinks h4{
+    color: #337418;
+    font-size: 16px;
+    margin-bottom: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.footerLinks li{ margin-bottom: 10px; }
+
+.footerLinks a{
+    color: #000;
+    font-size: 14px;
+}
+
+.footerLinks a:hover{ text-decoration: underline; }
+
+.footerBottom{
+    width: 80%;
+    margin: 0 auto;
+
+    border-top: 1px solid #ddd;
+    padding-top: 18px;
+    padding-bottom: 20px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    font-size: 13px;
+}
+
+.footerBottom img{
+    width: 170px;
+    height: auto;
+}
+
+.menuToggle{
+    display: none;
+}
+
+/* Icono hamburguesa */
+.menuIcon{
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #151515;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1200px){
+    .siteHeader{
+        padding: 0 40px;
+    }
+
+    main{
+        width: 90%;
+    }
+
+    .footerMiddle{
+        padding: 50px 100px;
+    }
+}
+
+@media (max-width: 900px){
+    .siteHeader{
+        padding: 0 20px;
+        height: 80px;
+    }
+
+    .headerLogo img{
+        width: 120px;
+    }
+
+    .searchForm{
+        display: none;
+    }
+
+    .menuIcon{
+        display: flex;
+        align-items: center;
+        height: 100%;
+        font-size: 22px;
+    }
+
+    .menuIcon i{
+        line-height: 1;
+    }
+
+    .siteNav{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: white;
+        border-top: 1px solid #eee;
+        display: none;
+        padding: 20px;
+    }
+
+    /* Menú vertical */
+    .siteNav ul{
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .menuToggle:checked ~ .siteNav{
+        display: block;
+    }
+
+    main{
+        width: 90%;
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .heroCamisetas{
+        height: 250px;
+    }
+
+    .tituloCamisetas{
+        font-size: 32px;
+    }
+
+    .descripcionCamisetas{
+        font-size: 14px;
+    }
+
+    .contenedorProductos{
+        display: none;
+    }
+
+    .productos{
+        grid-column: 1;
+        width: 100%;
+    }
+
+    .barraOrden{
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .gridProductos{
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .producto img{
+        height: 280px;
+    }
+
+    .footerTop{
+        flex-direction: column;
+        gap: 30px;
+        padding: 30px 20px;
+    }
+
+    .footerTop div{
+        width: 100%;
+    }
+
+    .footerMiddle{
+        flex-direction: column;
+        padding: 30px 20px;
+        gap: 30px;
+    }
+
+    .footerBrand{
+        width: 100%;
+    }
+
+    .footerNewsletter{
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .footerNewsletter a{
+        width: 100%;
+    }
+
+    .footerLinks{
+        width: 100%;
+        flex-direction: column;
+        padding: 30px 20px;
+        gap: 25px;
+    }
+
+    .footerBottom{
+        width: 100%;
+        flex-direction: column;
+        gap: 10px;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .footerBottom img{
+        width: 120px;
+    }
+}
+
+@media (max-width: 600px){
+    .siteHeader{
+        height: 70px;
+        padding: 0 15px;
+    }
+
+    .headerLogo img{
+        width: 100px;
+    }
+
+    .heroCamisetas{
+        height: 200px;
+        margin-bottom: 30px;
+    }
+
+    .accountBtn,
+    .cartBtn{
+        font-size: 16px;
+    }
+
+    main{
+        width: 95%;
+        gap: 20px;
+        padding: 0 20px;
+    }
+
+    .heroCamisetas{
+        height: 200px;
+        margin-bottom: 30px;
+    }
+
+    .introCamisetas{
+        margin-bottom: 30px;
+    }
+
+    .tituloCamisetas{
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    .descripcionCamisetas{
+        font-size: 13px;
+        max-width: 100%;
+    }
+
+    .introCamisetas .descripcionCamisetas{
+        line-height: 1.6;
+        margin-bottom: 30px;
+    }
+
+    .rutas{
+        font-size: 12px;
+    }
+
+    .barraOrden{
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .ver, .ordenar{
+        font-size: 12px;
+        gap: 8px;
+    }
+
+    .ordenar select{
+        padding: 5px 8px;
+        font-size: 12px;
+    }
+
+    .iconoVer{
+        padding: 4px 6px;
+        font-size: 12px;
+    }
+
+    .gridProductos{
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .producto img{
+        height: 220px;
+    }
+
+    .producto h3{
+        font-size: 12px;
+        margin-top: 8px;
+    }
+
+    .producto p{
+        font-size: 13px;
+    }
+
+    .paginacion{
+        padding: 20px 0;
+    }
+
+    .barra{
+        width: 150px;
+    }
+
+    .btnMostrar{
+        padding: 8px 16px;
+        font-size: 12px;
+    }
+
+    .footer{
+        padding: 0 30px;
+    }
+
+    .footerTop{
+        padding: 20px 15px;
+        gap: 20px;
+    }
+
+    .footerTop i{
+        font-size: 24px;
+    }
+
+    .footerTop h3{
+        font-size: 14px;
+    }
+
+    .footerTop p{
+        font-size: 12px;
+    }
+
+    .footerMiddle{
+        padding: 20px 15px;
+        gap: 20px;
+    }
+
+    .footerBrand p{
+        font-size: 14px;
+    }
+
+    .social a{
+        font-size: 20px;
+    }
+
+    .footerNewsletter p{
+        font-size: 12px;
+    }
+
+    .footerLinks{
+        padding: 20px 15px;
+    }
+
+    .footerLinks h4{
+        font-size: 14px;
+    }
+
+    .footerLinks a{
+        font-size: 12px;
+    }
+
+    .footerBottom{
+        padding: 15px;
+        font-size: 11px;
+        gap: 8px;
+    }
+
+    .footerBottom img{
+        width: 100px;
+    }
+}
+
+@media (max-width: 380px){
+    .siteHeader{
+        padding: 0 10px;
+    }
+
+    .headerLogo img{
+        width: 80px;
+    }
+
+    .accountBtn,
+    .cartBtn{
+        font-size: 14px;
+    }
+
+    main{
+        width: 100%;
+        padding: 0 30px;
+    }
+
+    .heroCamisetas{
+        height: 150px;
+    }
+
+    .tituloCamisetas{
+        font-size: 20px;
+    }
+
+    .descripcionCamisetas{
+        font-size: 12px;
+    }
+
+    .gridProductos{
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .producto img{
+        height: 200px;
+    }
+
+    .rutas{
+        font-size: 11px;
+    }
+
+    .ordenar select{
+        padding: 8px 8px;
+        font-size: 12px;
+    }
+
+    .footer{
+        padding: 0 30px;
+    }
+
+    .footerMiddle{
+        padding: 15px;
+    }
+
+    .footerLinks{
+        padding: 15px;
+    }
+}

@@ -1,0 +1,278 @@
+    <!DOCTYPE html>
+    <html lang="es">
+    <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://kit.fontawesome.com/8ded9e502a.js" crossorigin="anonymous"></script>
+    <title>Nuestra Historia - Worven</title>
+    <link rel="shortcut icon" href="img/Isotipo.png" type="image/x-icon" />
+    <link rel="stylesheet" href="css/sobreWorven.css"/>
+    <link rel="stylesheet" href="css/layout.css"/>
+    </head>
+
+    <body class="homePage">
+
+    <!-- HEADER PRINCIPAL -->
+    <header class="siteHeader">
+        <div class="headerLogo">
+            <a href="index.html">
+                <img src="img/Logotipo-blanco.png" alt="Logo de Worven">
+            </a>
+        </div>
+        <div class="headerActions">
+            <form class="searchForm" role="search" action="buscar.html" method="get">
+                <input type="text" name="q" placeholder="Buscar productos" aria-label="Buscar productos">
+                <button type="submit" aria-label="Buscar">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </form>
+            <a href="./construccion.html"><button class="accountBtn" aria-label="Mi cuenta"><i class="fa-solid fa-user"></i></button></a>
+            <a href="./construccion.html"><button class="cartBtn" aria-label="Carrito de compras"><i class="fa-solid fa-bag-shopping"></i></button></a>
+            <!-- Icono hamburguesa -->
+            <label for="menuToggle" class="menuIcon">
+                <i class="fa-solid fa-bars"></i>
+            </label>
+        </div>
+        <input type="checkbox" id="menuToggle" class="menuToggle">
+        <nav class="siteNav">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="camisetas.html">Camisetas</a></li>
+                <li><a href="colecciones.html">Colecciones</a></li>
+                <li><a href="sobreWorven.html">Sobre Worven</a></li>
+                <li><a href="contactanos.html">Contáctanos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- HERO -->
+        <section class="hero" aria-label="Banner principal">
+        <video class="heroVideo" autoplay muted loop playsinline>
+            <source src="./video/bg-main-section-about-us.mp4" type="video/mp4" />
+            Tu navegador no soporta videos
+        </video>
+
+        <div class="heroContent">
+            <p class="heroEyebrow">PRIMAVERA - VERANO 2026</p>
+            <h1 class="heroTitle">Nuestra Historia</h1>
+            <p class="heroSubtitle">Rindiendo homenaje a nuestros primeros días en Medellín</p>
+            <a class="heroBtn" href="#fundadores">Seguir leyendo</a>
+        </div>
+        </section>
+
+        <!-- FUNDADORES -->
+        <section id="fundadores" class="conocerMas">
+        <div class="fundadores">
+
+            <div class="texto">
+            <h2 class="title">FUNDADORES</h2>
+            <p class="infoSub">
+                Descubre las personas que dieron origen a Worven. Una historia construida con visión,
+                identidad y cultura urbana desde Medellín.
+            </p>
+
+            <a class="ctaSmall" href="#linea-tiempo">Conocer más</a>
+            </div>
+
+            <!-- Carrusel 3D -->
+            <div class="carousel3d" aria-label="Carrusel de fundadores">
+            <!-- Radios -->
+            <input type="radio" name="c3d" id="c3d-1" checked />
+            <input type="radio" name="c3d" id="c3d-2" />
+            <input type="radio" name="c3d" id="c3d-3" />
+
+            <div class="carouselStage">
+                <!-- Cards -->
+                <label class="carouselCard card-1" for="c3d-1">
+                <img src="img/1er-fundador.jpg" alt="Fundador Worven 1" />
+                </label>
+
+                <label class="carouselCard card-2" for="c3d-2">
+                <img src="img/2do-fundador.jpg" alt="Fundador Worven 2" />
+                </label>
+
+                <label class="carouselCard card-3" for="c3d-3">
+                <img src="img/3ra-fundadora.jpg" alt="Fundador Worven 3" />
+                </label>
+
+            </div>
+
+            <div class="carouselDots" aria-label="Paginación carrusel">
+                <label for="c3d-1" class="dot" aria-label="Ir al slide 1"></label>
+                <label for="c3d-2" class="dot" aria-label="Ir al slide 2"></label>
+                <label for="c3d-3" class="dot" aria-label="Ir al slide 3"></label>
+            </div>
+            </div>
+
+        </div>
+        </section>
+
+        <!-- HISTORIA / MISIÓN / VISIÓN + LÍNEA DE TIEMPO -->
+        <section id="linea-tiempo" class="seccionHistoria">
+        <div class="colInfo">
+
+            <article class="bloqueInfo">
+            <h2>HISTORIA</h2>
+            <p>
+                Worven nació en Medellín con el propósito de crear prendas que representen identidad,
+                estilo y autenticidad. Crecemos con la cultura urbana: simple, fuerte y real.
+            </p>
+            </article>
+
+            <article class="bloqueInfo">
+            <h2>MISIÓN</h2>
+            <p>
+                Diseñar y comercializar prendas que conecten con la personalidad de nuestros clientes,
+                ofreciendo calidad, diseño y confianza en cada detalle.
+            </p>
+            </article>
+
+            <article class="bloqueInfo">
+            <h2>VISIÓN</h2>
+            <p>
+                Consolidarnos como una marca referente en moda urbana a nivel nacional, expandiendo
+                nuestra presencia en el mercado digital y en experiencias físicas.
+            </p>
+            </article>
+
+        </div>
+
+        <aside class="lineaTiempo" aria-label="Línea de tiempo Worven">
+            <div class="timelineList">
+
+            <article class="itemTiempo">
+                <img src="img/2015.jpg" alt="Año 2015" />
+                <div class="contenidoTiempo">
+                <h3 class="año">2015</h3>
+                <p class="info">Nace la idea de Worven como proyecto independiente.</p>
+                </div>
+            </article>
+
+            <article class="itemTiempo">
+                <img src="img/2016.jpg" alt="Año 2016" />
+                <div class="contenidoTiempo">
+                <h3 class="año">2016</h3>
+                <p class="info">Se lanza la primera colección limitada.</p>
+                </div>
+            </article>
+
+            <article class="itemTiempo">
+                <img src="img/2020.jpg" alt="Año 2020" />
+                <div class="contenidoTiempo">
+                <h3 class="año">2020</h3>
+                <p class="info">Expansión al comercio electrónico.</p>
+                </div>
+            </article>
+
+            <article class="itemTiempo">
+                <img src="img/2022.jpg" alt="Año 2022" />
+                <div class="contenidoTiempo">
+                <h3 class="año">2022</h3>
+                <p class="info">Apertura del primer punto físico en Medellín.</p>
+                </div>
+            </article>
+
+            </div>
+        </aside>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <section class="footerTop">
+            <div>
+                <i class="fa-solid fa-rotate-right"></i>
+                <h3>Cambios y devoluciones GRATIS</h3>
+                <p>Tienes hasta 30 días calendario para realizar cambios en cualquiera de nuestras tiendas físicas.</p>
+            </div>
+            <div>
+                <i class="fa-regular fa-truck"></i>
+                <h3>Envíos Express</h3>
+                <p>Entregas en Medellín en 24 horas y envíos nacionales entre 2 y 4 días hábiles.</p>
+            </div>
+            <div>
+                <i class="fa-solid fa-credit-card"></i>
+                <h3>Múltiples medios de pago</h3>
+                <p>Tarjetas débito, crédito, PSE y pagos contra entrega disponibles.</p>
+            </div>
+            <div>
+                <i class="fa-solid fa-file-invoice-dollar"></i>
+                <h3>Opciones de financiación</h3>
+                <p>Paga en cuotas con entidades aliadas o a través de Su+ Pay.</p>
+            </div>
+        </section>
+
+        <section class="footerMiddle">
+            <div class="footerBrand">
+                <img src="img/Isotipo.png" alt="Logo Worven">
+                <p><strong>Wear Your Identity</strong></p>
+                <p>Dirección: Calle 14 # 52 A 372, Medellín, Colombia</p>
+                <p>Tel: 01 8000 189 002</p>
+
+                <div class="social">
+                    <a href="https://www.whatsapp.com/" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                </div>
+            </div>
+
+            <div class="footerNewsletter">
+                <p>
+                    Suscríbete a nuestra newsletter y recibe acceso anticipado a lanzamientos,
+                    descuentos exclusivos y contenido especial de Worven.
+                </p>
+                <a href="contactanos.html">Quiero suscribirme</a>
+            </div>
+        </section>
+
+        <section class="footerLinks">
+            <nav>
+                <h4>Sobre Nosotros</h4>
+                <ul>
+                    <li><a href="./sobreWorven.html">Nuestra historia</a></li>
+                    <li><a href="colecciones.html">Próximos lanzamientos</a></li>
+                    <li><a href="camisetas.html">Ofertas</a></li>
+                </ul>
+            </nav>
+
+            <nav>
+                <h4>Información</h4>
+                <ul>
+                    <li><a href="politicas.html">Términos y condiciones</a></li>
+                    <li><a href="politicas.html#cookies">Política de Cookies</a></li>
+                    <li><a href="politicas.html#cambios">Cambios y devoluciones</a></li>
+                    <li><a href="politicas.html#datos">Protección de datos</a></li>
+                </ul>
+            </nav>
+
+            <nav>
+                <h4>Cambios y Devoluciones</h4>
+                <ul>
+                    <li><a href="politicas.html#cambios">Gestionar mi cambio</a></li>
+                    <li><a href="politicas.html#pqr">PQR y solicitudes</a></li>
+                    <li><a href="politicas.html#pqr">Consultar estado de PQR</a></li>
+                </ul>
+            </nav>
+
+            <nav>
+                <h4>Servicio al Cliente</h4>
+                <ul>
+                    <li><a href="https://www.whatsapp.com/" target="_blank">WhatsApp</a></li>
+                    <li><a href="contactanos.html">Centro de ayuda</a></li>
+                    <li><a href="tel:+573001234567">Línea nacional: 01 8000 189 002</a></li>
+                </ul>
+            </nav>
+        </section>
+
+        <section class="footerBottom">
+            <a href="./index.html"><img src="./img/logo-original-Worven.png" alt="Logo-Worven"></a>
+            <p>Worven S.A.S | NIT: 901.456.782-3</p>
+            <p>© 2026 Worven. Todos los derechos reservados.</p>
+        </section>
+    </footer>
+
+    </body>
+    </html>
