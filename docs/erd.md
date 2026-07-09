@@ -87,7 +87,16 @@ Ajustado al MVP: catálogo filtra solo por categoría (sin variantes de stock po
 | productos — item_carritos | 1 a muchos | item_carritos.id_producto |
 | ordenes — item_ordenes | 1 a muchos | item_ordenes.id_orden |
 
+### mensajes_contacto
+- id, nombre, correo, mensaje, fecha_creacion
+
+### suscriptores
+- id, correo (único), fecha_creacion
+
 ## Decisiones de diseño registradas
+- El envío no puede pasar a "Enviado" si `estado_pago` no es "Aprobado" — evita despachar pedidos no pagados.
+- `create_superuser` asigna automáticamente `rol='admin'`, para que un solo comando dé acceso tanto al panel de Django Admin como a los endpoints de administrador de la API.
+- `mensajes_contacto` y `suscriptores` no tienen relación con `usuarios` — cualquiera puede enviarlos sin estar autenticado ni tener cuenta.
 
 - **No existe tabla de variantes de producto** (talla/color/stock por combinación) porque el MVP solo filtra por categoría — decisión validada con el equipo.
 - **item_ordenes no tiene FK a productos** — los datos se copian ("congelan") al momento de la compra, para que cambios futuros en el producto (precio, desactivación) no afecten órdenes ya realizadas.
