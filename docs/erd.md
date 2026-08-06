@@ -30,11 +30,19 @@ Ajustado al MVP: catálogo filtra solo por categoría (sin variantes de stock po
 | descripcion | texto | |
 | precio |      decimal | |
 | categoria |   texto |     hombre / mujer / niños |
-| talla |       texto | |
-| color |       texto | |
-| stock |       entero | |
-| imagen |      texto (url) | |
+| imagen_principal|   ImagenField (local) |   Cloudinary en produccion, ver decision abajo |
 | activo |      booleano |  para desactivar sin eliminar |
+| fecha cracion | fecha | usada pera ordenar por defecto |
+
+### variantes_producto
+| Campo | Tipo | Nota |
+|---    |---    |---    |
+| id_variante | PK | |
+| id_producto | FK | |
+| talla | texto | |
+| color | texto | |
+| stock | entero | el stock vive aquí, no en producto |
+| sku | texto | único, identifica la combinación exacta |
 
 ### carritos
 | Campo |       Tipo |      Nota |
@@ -47,7 +55,7 @@ Ajustado al MVP: catálogo filtra solo por categoría (sin variantes de stock po
 |---|---|---|
 | id_item_carrito | PK | |
 | id_carrito |      FK | |
-| id_producto |     FK | |
+| id_variante |     FK | |
 | cantidad |        entero | |
 
 ### ordenes
@@ -72,6 +80,7 @@ Ajustado al MVP: catálogo filtra solo por categoría (sin variantes de stock po
 | id_item_orden |   PK | |
 | id_orden |        FK | |
 | nombre_producto | texto |     congelado al momento de la compra |
+| sku  |            texto |     congelado |
 | talla |           texto |     congelado |
 | color |           texto |     congelado |
 | precio_unitario | decimal |   congelado |
@@ -83,8 +92,9 @@ Ajustado al MVP: catálogo filtra solo por categoría (sin variantes de stock po
 |---|---|---|
 | usuarios — carritos | 1 a 1 | carritos.id_usuario |
 | usuarios — ordenes | 1 a muchos | ordenes.id_usuario |
+| productos — variantes_producto | 1 a muchos | variantes_producto.id_producto |
 | carritos — item_carritos | 1 a muchos | item_carritos.id_carrito |
-| productos — item_carritos | 1 a muchos | item_carritos.id_producto |
+| variantes_producto — item_carritos | 1 a muchos | item_carritos.id_variante |
 | ordenes — item_ordenes | 1 a muchos | item_ordenes.id_orden |
 
 ### mensajes_contacto
@@ -98,6 +108,7 @@ Ajustado al MVP: catálogo filtra solo por categoría (sin variantes de stock po
 - `create_superuser` asigna automáticamente `rol='admin'`, para que un solo comando dé acceso tanto al panel de Django Admin como a los endpoints de administrador de la API.
 - `mensajes_contacto` y `suscriptores` no tienen relación con `usuarios` — cualquiera puede enviarlos sin estar autenticado ni tener cuenta.
 
-- **No existe tabla de variantes de producto** (talla/color/stock por combinación) porque el MVP solo filtra por categoría — decisión validada con el equipo.
+- **Sí existe tabla de variantes** (`variantes_producto`): un producto agrupa la info general (nombre, foto, precio, categoría), y cada combinación talla+color es una variante con su propio stock y SKU — evita duplicar productos idénticos por cada talla/color.
+- **Imágenes:** `ImageField` local durante desarrollo (`MEDIA_ROOT`/`MEDIA_URL`); se evaluará migrar a Cloudinary en producción, sin cambiar la lógica de negocio, solo el backend de almacenamiento.
 - **item_ordenes no tiene FK a productos** — los datos se copian ("congelan") al momento de la compra, para que cambios futuros en el producto (precio, desactivación) no afecten órdenes ya realizadas.
 - **estado y estado_pago están separados** — el envío y el pago tienen ciclos de vida independientes desde que se integró Wompi.
