@@ -27,6 +27,7 @@ Cada módulo se desarrolla en su propia rama `feature/*`, partiendo de `develop`
 3. Módulo 3: Carrito de compras
 4. Módulo 4: Órdenes y pagos (incluye integración Wompi sandbox + webhook)
 5. Módulo 5: Panel de administración
+6. Módulo 6: Contacto y newsletter
 
 ## Fase 5 — Pruebas (3-5 días) 🔲 No iniciada
 - [ ] Pruebas unitarias con pytest
@@ -75,9 +76,13 @@ Como son dos personas, trabajan con Kanban directamente en GitHub. Cada tarea es
 ```
 main          ← solo código estable y probado (protegida: PR + 1 aprobación obligatoria)
   └── develop ← rama de integración (protegida: requiere PR)
-        └── feature/autenticacion
-        └── feature/productos
+        └── feature/setup-django
+        └── feature/auth-jwt
+        └── feature/catalogo-productos
+        └── feature/ordenamiento-catalogo
         └── feature/carrito
         └── feature/ordenes-pagos
-        └── feature/panel-admin
+        └── feature/contacto-newsletter
+        └── feature/admin-panel
+        └── feature/frontend-*
 ```

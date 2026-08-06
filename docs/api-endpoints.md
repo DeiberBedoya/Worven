@@ -30,8 +30,8 @@
 
 | Método | Ruta | Descripción | Quién puede usarlo | Request body | Respuesta |
 |---|---|---|---|---|---|
-| GET | `/api/carritos/me/` | Ver mi carrito | Usuario autenticado | — | `{id_carrito, items: [{id_item_carrito, id_producto, nombre, precio, cantidad, subtotal}, ...], total}` |
-| POST | `/api/carritos/items/` | Agregar un producto al carrito | Usuario autenticado | `{id_producto, cantidad}` | `{id_item_carrito, id_variante, cantidad, subtotal}` |
+| GET | `/api/carritos/me/` | Ver mi carrito | Usuario autenticado | — | `{id_carrito, items: [{id_item_carrito, id_variante, nombre, talla, color, precio, cantidad, subtotal}, ...], total}` |
+| POST | `/api/carritos/items/` | Agregar una variante al carrito | Usuario autenticado | `{id_variante, cantidad}` | `{id_item_carrito, id_variante, cantidad, subtotal}` |
 | PATCH | `/api/carritos/items/{id}/` | Modificar cantidad de un item | Usuario autenticado | `{cantidad}` | `{id_item_carrito, cantidad, subtotal}` |
 | DELETE | `/api/carritos/items/{id}/` | Eliminar un producto del carrito | Usuario autenticado | — | — |
 | DELETE | `/api/carritos/items/` | Vaciar el carrito completo | Usuario autenticado | — | — |

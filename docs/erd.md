@@ -6,7 +6,7 @@
 # Tablas — Worven
 ![Diagrama ERD de Worven](img/tablas-worven.png)
 
-Ajustado al MVP: catálogo filtra solo por categoría (sin variantes de stock por talla/color), y con la integración de pagos vía Wompi (modo sandbox).
+Ajustado al MVP: catálogo filtra solo por categoría, con soporte de variantes por talla/color (stock independiente por combinación), y con la integración de pagos vía Wompi (modo sandbox).
 
 ## Entidades
 

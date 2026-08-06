@@ -67,7 +67,7 @@ Ya definido — actores Cliente y Administrador, con acciones como registrarse, 
 2. La contraseña debe tener un mínimo de 8 caracteres.
 3. Al registrarse exitosamente, el sistema devuelve un `access` y un `refresh` token JWT.
 4. Si el correo ya existe, el sistema muestra el mensaje "Este correo ya está registrado".
-5. Criterio 5: Al crear un superusuario de Django (createsuperuser), su rol se asigna automáticamente como "admin".
+5. Al crear un superusuario de Django (createsuperuser), su rol se asigna automáticamente como "admin".
 
 ### HU-02 — Catálogo y filtros de ropa
 **Como** cliente, **quiero** ver el catálogo de camisetas y filtrarlas por categoría, **para** encontrar rápidamente la camiseta que se adapte a mi estilo.
@@ -110,12 +110,6 @@ Ya definido — actores Cliente y Administrador, con acciones como registrarse, 
 2. El sistema no permite guardar un producto con precio en cero, ni una variante con stock negativo.
 3. Al editar un producto o una variante, los cambios se reflejan inmediatamente en el catálogo.
 4. Al desactivar un producto, deja de aparecer en el catálogo sin eliminarse de la base de datos (sus variantes permanecen asociadas).
-
-**Criterios de aceptación:**
-1. El administrador puede crear un producto nuevo con nombre, precio, talla, color, categoría y foto.
-2. El sistema no permite guardar un producto con stock negativo o precio en cero.
-3. Al editar un producto, los cambios se reflejan inmediatamente en el catálogo.
-4. Al desactivar un producto, deja de aparecer en el catálogo sin eliminarse de la base de datos.
 
 ### HU-06 — Control y cambios de estado de pedidos
 **Como** administrador, **quiero** ver todos los pedidos realizados y cambiar el estado de su envío, **para** gestionar la logística de manera eficiente.
