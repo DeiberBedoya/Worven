@@ -54,6 +54,7 @@ Cada módulo se desarrolla en su propia rama `feature/*`, partiendo de `develop`
 | API | Django REST Framework | Estándar de la industria |
 | Autenticación | djangorestframework-simplejwt | JWT es lo que usan las empresas |
 | Base de datos | PostgreSQL | Nunca SQLite en portafolio |
+| Almacenamiento de imágenes | ImageField (local) → Cloudinary (futuro) | Local para desarrollo; migración a Cloudinary planeada al pasar a producción, sin cambiar la lógica de negocio |
 | Conexión a BD | psycopg2-binary | Requerido para que Django hable con PostgreSQL |
 | CORS | django-cors-headers | Frontend y backend viven en orígenes distintos |
 | Pasarela de pagos | Wompi (modo sandbox) | Integración real de pagos sin mover dinero real |
