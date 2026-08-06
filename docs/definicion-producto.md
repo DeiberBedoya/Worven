@@ -101,7 +101,15 @@ Ya definido — actores Cliente y Administrador, con acciones como registrarse, 
 4. Si un producto se agotó entre agregar al carrito y pagar, el sistema avisa antes de continuar.
 
 ### HU-05 — Gestión de inventario (CRUD)
-**Como** administrador, **quiero** crear, editar y actualizar el stock de las camisetas, **para** mantener el catálogo de la tienda siempre actualizado.
+**Como** administrador, **quiero** crear un producto y agregarle variantes (talla, color y stock), y poder editarlos, **para** mantener el catálogo de la tienda siempre actualizado.
+
+> Actualizado: el producto (nombre, descripción, precio, categoría, foto) y sus variantes (talla, color, stock) ahora son entidades separadas — un mismo producto puede tener varias combinaciones de talla/color, cada una con su propio stock.
+
+**Criterios de aceptación:**
+1. El administrador puede crear un producto nuevo con nombre, precio, categoría y foto, y agregarle una o más variantes (talla, color, stock).
+2. El sistema no permite guardar un producto con precio en cero, ni una variante con stock negativo.
+3. Al editar un producto o una variante, los cambios se reflejan inmediatamente en el catálogo.
+4. Al desactivar un producto, deja de aparecer en el catálogo sin eliminarse de la base de datos (sus variantes permanecen asociadas).
 
 **Criterios de aceptación:**
 1. El administrador puede crear un producto nuevo con nombre, precio, talla, color, categoría y foto.
