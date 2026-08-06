@@ -16,11 +16,13 @@
 
 | Método | Ruta | Descripción | Quién puede usarlo | Request body | Respuesta |
 |---|---|---|---|---|---|
-| GET | `/api/productos/?categoria=hombre&ordering=precio` | Listar catálogo con filtro por categoría y ordenamiento opcional | Cualquiera | — | `[{id_producto, nombre, descripcion, precio, talla, color, stock, imagen, activo}, ...]` |
-| GET | `/api/productos/{id}/` | Ver detalle de un producto | Cualquiera | — | `{id_producto, nombre, descripcion, precio, talla, color, stock, imagen, activo}` |
-| POST | `/api/productos/` | Crear producto nuevo | Solo admin | `{nombre, descripcion, precio, talla, color, stock, imagen}` | `{id_producto, nombre, ...}` |
-| PATCH | `/api/productos/{id}/` | Editar producto existente | Solo admin | `{nombre?, precio?, stock?, ...}` | `{id_producto, nombre, ...}` |
+| GET | `/api/productos/?categoria=hombre&ordering=precio` | Listar catálogo, cada producto incluye sus variantes | Cualquiera | — | `[{id_producto, nombre, descripcion, precio, categoria, imagen_principal, activo, variantes: [{id_variante, talla, color, stock, sku}, ...]}, ...]` |
+| GET | `/api/productos/{id}/` | Ver detalle de un producto con sus variantes | Cualquiera | — | `{id_producto, nombre, descripcion, precio, categoria, imagen_principal, activo, variantes: [...]}` |
+| POST | `/api/productos/` | Crear producto (sin variantes todavía) | Solo admin | `{nombre, descripcion, precio, categoria, imagen_principal}` | `{id_producto, nombre, ...}` |
+| PATCH | `/api/productos/{id}/` | Editar producto existente | Solo admin | `{nombre?, precio?, ...}` | `{id_producto, nombre, ...}` |
 | PATCH | `/api/productos/{id}/desactivar/` | Desactivar sin eliminar | Solo admin | — | `{id_producto, activo: false}` |
+| POST | `/api/productos/{id}/variantes/` | Agregar una variante (talla/color/stock) a un producto | Solo admin | `{talla, color, stock, sku}` | `{id_variante, talla, color, stock, sku}` |
+| PATCH | `/api/productos/variantes/{id}/` | Editar una variante existente (ej. actualizar stock) | Solo admin | `{talla?, color?, stock?}` | `{id_variante, talla, color, stock, sku}` |
 
 **Parámetro `ordering`:** acepta `precio` (menor a mayor), `-precio` (mayor a menor) o `-fecha_creacion` (más reciente primero, valor por defecto si no se especifica). El filtro sigue siendo únicamente por categoría — no se combina con talla ni color en esta versión.
 
@@ -29,7 +31,7 @@
 | Método | Ruta | Descripción | Quién puede usarlo | Request body | Respuesta |
 |---|---|---|---|---|---|
 | GET | `/api/carritos/me/` | Ver mi carrito | Usuario autenticado | — | `{id_carrito, items: [{id_item_carrito, id_producto, nombre, precio, cantidad, subtotal}, ...], total}` |
-| POST | `/api/carritos/items/` | Agregar un producto al carrito | Usuario autenticado | `{id_producto, cantidad}` | `{id_item_carrito, id_producto, cantidad, subtotal}` |
+| POST | `/api/carritos/items/` | Agregar un producto al carrito | Usuario autenticado | `{id_producto, cantidad}` | `{id_item_carrito, id_variante, cantidad, subtotal}` |
 | PATCH | `/api/carritos/items/{id}/` | Modificar cantidad de un item | Usuario autenticado | `{cantidad}` | `{id_item_carrito, cantidad, subtotal}` |
 | DELETE | `/api/carritos/items/{id}/` | Eliminar un producto del carrito | Usuario autenticado | — | — |
 | DELETE | `/api/carritos/items/` | Vaciar el carrito completo | Usuario autenticado | — | — |
