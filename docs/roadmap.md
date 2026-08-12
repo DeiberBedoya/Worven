@@ -50,7 +50,7 @@ Cada módulo se desarrolla en su propia rama `feature/*`, partiendo de `develop`
 | Capa | Tecnología | Por qué |
 |---|---|---|
 | Lenguaje | Python 3.11+ | Base |
-| Framework | Django 5 | Robusto y muy demandado |
+| Framework | Django 6 | Robusto y muy demandado |
 | API | Django REST Framework | Estándar de la industria |
 | Autenticación | djangorestframework-simplejwt | JWT es lo que usan las empresas |
 | Base de datos | PostgreSQL | Nunca SQLite en portafolio |
