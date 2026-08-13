@@ -67,7 +67,7 @@ Ya definido — actores Cliente y Administrador, con acciones como registrarse, 
 2. La contraseña debe tener un mínimo de 8 caracteres.
 3. Al registrarse exitosamente, el sistema devuelve un `access` y un `refresh` token JWT.
 4. Si el correo ya existe, el sistema muestra el mensaje "Este correo ya está registrado".
-5. Criterio 5: Al crear un superusuario de Django (createsuperuser), su rol se asigna automáticamente como "admin".
+5. Al crear un superusuario de Django (createsuperuser), su rol se asigna automáticamente como "admin".
 
 ### HU-02 — Catálogo y filtros de ropa
 **Como** cliente, **quiero** ver el catálogo de camisetas y filtrarlas por categoría, **para** encontrar rápidamente la camiseta que se adapte a mi estilo.
@@ -101,13 +101,15 @@ Ya definido — actores Cliente y Administrador, con acciones como registrarse, 
 4. Si un producto se agotó entre agregar al carrito y pagar, el sistema avisa antes de continuar.
 
 ### HU-05 — Gestión de inventario (CRUD)
-**Como** administrador, **quiero** crear, editar y actualizar el stock de las camisetas, **para** mantener el catálogo de la tienda siempre actualizado.
+**Como** administrador, **quiero** crear un producto y agregarle variantes (talla, color y stock), y poder editarlos, **para** mantener el catálogo de la tienda siempre actualizado.
+
+> Actualizado: el producto (nombre, descripción, precio, categoría, foto) y sus variantes (talla, color, stock) ahora son entidades separadas — un mismo producto puede tener varias combinaciones de talla/color, cada una con su propio stock.
 
 **Criterios de aceptación:**
-1. El administrador puede crear un producto nuevo con nombre, precio, talla, color, categoría y foto.
-2. El sistema no permite guardar un producto con stock negativo o precio en cero.
-3. Al editar un producto, los cambios se reflejan inmediatamente en el catálogo.
-4. Al desactivar un producto, deja de aparecer en el catálogo sin eliminarse de la base de datos.
+1. El administrador puede crear un producto nuevo con nombre, precio, categoría y foto, y agregarle una o más variantes (talla, color, stock).
+2. El sistema no permite guardar un producto con precio en cero, ni una variante con stock negativo.
+3. Al editar un producto o una variante, los cambios se reflejan inmediatamente en el catálogo.
+4. Al desactivar un producto, deja de aparecer en el catálogo sin eliminarse de la base de datos (sus variantes permanecen asociadas).
 
 ### HU-06 — Control y cambios de estado de pedidos
 **Como** administrador, **quiero** ver todos los pedidos realizados y cambiar el estado de su envío, **para** gestionar la logística de manera eficiente.

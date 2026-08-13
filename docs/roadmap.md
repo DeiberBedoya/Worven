@@ -27,6 +27,7 @@ Cada módulo se desarrolla en su propia rama `feature/*`, partiendo de `develop`
 3. Módulo 3: Carrito de compras
 4. Módulo 4: Órdenes y pagos (incluye integración Wompi sandbox + webhook)
 5. Módulo 5: Panel de administración
+6. Módulo 6: Contacto y newsletter
 
 ## Fase 5 — Pruebas (3-5 días) 🔲 No iniciada
 - [ ] Pruebas unitarias con pytest
@@ -54,6 +55,7 @@ Cada módulo se desarrolla en su propia rama `feature/*`, partiendo de `develop`
 | API | Django REST Framework | Estándar de la industria |
 | Autenticación | djangorestframework-simplejwt | JWT es lo que usan las empresas |
 | Base de datos | PostgreSQL | Nunca SQLite en portafolio |
+| Almacenamiento de imágenes | ImageField (local) → Cloudinary (futuro) | Local para desarrollo; migración a Cloudinary planeada al pasar a producción, sin cambiar la lógica de negocio |
 | Conexión a BD | psycopg2-binary | Requerido para que Django hable con PostgreSQL |
 | CORS | django-cors-headers | Frontend y backend viven en orígenes distintos |
 | Pasarela de pagos | Wompi (modo sandbox) | Integración real de pagos sin mover dinero real |
@@ -74,9 +76,13 @@ Como son dos personas, trabajan con Kanban directamente en GitHub. Cada tarea es
 ```
 main          ← solo código estable y probado (protegida: PR + 1 aprobación obligatoria)
   └── develop ← rama de integración (protegida: requiere PR)
-        └── feature/autenticacion
-        └── feature/productos
+        └── feature/setup-django
+        └── feature/auth-jwt
+        └── feature/catalogo-productos
+        └── feature/ordenamiento-catalogo
         └── feature/carrito
         └── feature/ordenes-pagos
-        └── feature/panel-admin
+        └── feature/contacto-newsletter
+        └── feature/admin-panel
+        └── feature/frontend-*
 ```
