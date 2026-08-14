@@ -3,7 +3,7 @@ from django.db import models
 
 class UsuarioManager(BaseUserManager):
     def create_user(self, correo, password=None, **extra_fields):
-        if correo:
+        if not correo:
             raise ValueError("El usuario debe tener un correo electrónico.")
         correo = self.normalize_email(correo)
         usuario = self.model(correo=correo, **extra_fields)
