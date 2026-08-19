@@ -13,7 +13,7 @@ class RegistroSerializer(serializers.ModelSerializer):
 
     def validate_correo(self, value):
         if Usuario.objects.filter(correo=value).exists():
-            raise serializers.ValidationError('Este correo ya esta registrado')
+            raise serializers.ValidationError('Este correo ya está registrado')
         return value
 
     def create(self, validated_data):
