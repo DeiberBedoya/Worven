@@ -10,6 +10,9 @@ class CrearVarianteProductoSerializer(serializers.ModelSerializer):
     class Meta:
         model = VarianteProducto
         fields = ['id', 'talla', 'color', 'stock', 'sku']
+        extra_kwargs = {
+        'sku': {'validators': []},
+        }
 
     def validate_sku(self, value):
         if VarianteProducto.objects.filter(sku=value).exists():
